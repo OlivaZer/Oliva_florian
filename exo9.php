@@ -8,4 +8,22 @@ plus de 20 ans, alors celle-ci est imposable (sinon ce n’est pas le cas, « no
 
 <?php
 
-$homme
+
+$age = 18;
+$sex = "H";
+
+    if ($sex =="H" || $sex == "F"){
+        if ($sex == "F" and $age >=18 and $age <=25   ){
+            echo "imposable";
+        }
+        elseif($sex == "H" and $age >= 20  ){
+            echo "imposable";
+        }
+
+        else{
+            echo "pas imposable";
+        }
+
+    }
+
+    
