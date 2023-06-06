@@ -10,8 +10,38 @@ affiche à un utilisateur un rendu de monnaie en nombre de billets de 10 € et 
 <?php
 
 $montant_à_payer = 152;
-$somme_à_verser = 200;
+$somme_verser = 200;
+$monnaie = $montant_à_payer - $montant_versé; 
+$compteur = 0;
 
-    if()
+
+    while( $monnaie >= 10){
+        $monnaie = $monnaie - 10;
+        $compteur = $compteur + 1;
+        echo "$compteur billets de 10 euros";
+
+    }
+
+    while ( $monnaie >= 5 ){
+        $monnaie = $monnaie - 5;
+        $compteur = $compteur + 1;
+        echo "$compteur billet de 10 euros ";
+    }
+
+    while ( $monnaie >=2 ){
+        $monnaie = $monnaie -2;
+        $compteur = $compteur +1;
+        echo "$compteur pièces de 2 euros";
+    }
+
+    while ($monnaie >=1 ){
+        $monnaie = $monnaie - 1;
+        $compteur = $compteur +1;
+        echo "$compteur pièces de 1 euro";
+    }
+
+     
+    
+
 
 
