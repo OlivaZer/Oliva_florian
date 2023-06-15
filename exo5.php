@@ -8,4 +8,6 @@ Attention, la valeur générée devra être arrondie à 2 décimales</p>
 <?php
 
 $francs = 100;
-$euros = 
+$moitier = $francs + 50;
+$euros = round ($moitier / 10 );
+echo " 100 francs = $euros euros";

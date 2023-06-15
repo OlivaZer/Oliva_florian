@@ -9,5 +9,5 @@ contenus dans celle-ci.</p>
 
 $phrase = "Notre formation DL commence aujourd’hui";
 $nbMots = str_word_count ($phrase);
-echo "la phrase contient  $nbMots mots <br>";
+echo "la phrase contient $nbMots mots <br>";
 
