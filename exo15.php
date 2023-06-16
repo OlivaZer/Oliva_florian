@@ -40,7 +40,7 @@ class Personne {
     public function getDateNaissance() {
         return $this->dateNaissance;
     }
-    
+    // Méthode pour obtebir l'âge de la personne
     public function getAge() {
         $dateNaissance = new DateTime($this->dateNaissance);
         $maintenant = new DateTime();
