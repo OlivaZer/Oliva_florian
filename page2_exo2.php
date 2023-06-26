@@ -45,7 +45,10 @@ USA Washington
         // Utilisation de la balise <table> pour créer un tableau HTML
         echo "<table>";
         // Création des ligne du tableau $capitales
-        echo "<tr><th>Pays</th><th>Capitale</th></tr>";
+        echo "<tr>
+                <th>Pays</th>
+                <th>Capitale</th>
+            </tr>";
         
     
         foreach ($capitales as $pays => $capitale) {
@@ -53,7 +56,10 @@ USA Washington
             $paysMajuscules = strtoupper($pays);
             
             // On ajoute la une ligne avec les variable $paysMajuscules et $capitales
-            echo "<tr><td>$paysMajuscules</td><td>$capitale</td></tr>";
+            echo "<tr>
+                    <td>$paysMajuscules</td>
+                    <td>$capitale</td>
+                </tr>";
         }
             
         
