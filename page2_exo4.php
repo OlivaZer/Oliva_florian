@@ -10,11 +10,12 @@ $capitales = array ("France"=>"Paris","Allemagne"=>"Berlin", "USA"=>"Washington"
 
 
 <h2>Résultat</h2>
+   
 
 <?php
 
  //Création du mon tableau " array " avec une clef " première colone " et de sa valeur " deuxième colone "
-
+    
     $capitales = array(
         "France" => "Paris",
         "Allemagne" => "Berlin",
@@ -23,40 +24,32 @@ $capitales = array ("France"=>"Paris","Allemagne"=>"Berlin", "USA"=>"Washington"
         "Italie" => "Rome"
     );
 
-    // Création de la variabl
-    $lien = "https://fr.wikipedia.org/wiki/Wikipédia:Accueil_principal";
 
     // Appel de la fonction " afficherTableHTML" pour afficher le tableau HTML
             afficherTableHTML($capitales);
     
 
 
-    function afficherTableHTML($capitales) {
-        
-        // Utilisation de la fonction "ksort()" pour trier le tableau $capitales par ordre alphabétique 
-        ksort($capitales);
-
-        ksort($lien);
-
-        
-
-        // Utilisation de la balise <table> pour créer un tableau HTML
-        echo "<table>";
-
-        // Création des ligne du tableau $capitales
-        echo "<tr><th>Pays</th><th>Capitale</th><th>Lien Wiki</th></tr>";
-        
-    
-        foreach ($capitales as $pays => $capitale) {
-
-            // Convertier des mots en MAJUSCULE avec la fonction "strtoupper"
-            $paysMajuscules = strtoupper($pays);
-            
-            
-            // On ajoute la une ligne avec les variable $paysMajuscules et $capitales
-            echo "<tr><td>$paysMajuscules</td><td>$capitale</td>$lien</tr>";
-        }
-            
-        
-    }
-
+            function afficherTableHTML($capitales) {
+                ksort($capitales);
+                echo "<table>";
+                echo "<tr>
+                        <th>Pays</th>
+                        <th>Capitale</th>
+                        <th>Lien wiki</th>
+                    </tr>";
+                    
+                foreach ($capitales as $pays => $capitale) {
+                    $paysMajuscules = strtoupper($pays);
+                    $capitaleWiki = strtolower(str_replace(' ', '_', $capitale));
+                    $wikiURL = "https://fr.wikipedia.org/wiki/".$capitaleWiki;
+                    
+                    echo "<tr>
+                            <td>$paysMajuscules</td>
+                            <td>$capitale</td>
+                            <td><a href='$wikiURL'>Wiki</a></td>
+                        </tr>";
+                }
+                
+                echo "</table>";
+            }
