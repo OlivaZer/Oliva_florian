@@ -17,6 +17,7 @@ $elements = array("Monsieur","Madame","Mademoiselle"); alimenterListeDeroulante(
     function alimenterListeDeroulante($elements) {
         //Début de la balise de la liste déroulante
         $html = '<select>';
+        // Parcours de chaque élément du tableau
         foreach ($elements as $valeur) {
             //Ajout des options à la liste déroulante
             $html .= '<option value="' . $valeur . '">' . $valeur . '</option>';
