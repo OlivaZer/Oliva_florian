@@ -13,6 +13,11 @@ vendredi 23 février 2018
 <h2>Résultat</h2>
 
 <?php
+    $dateUS = ("2018-02-23");
+    $dateFr = new DateTime ::createFromFormat ('d/m/Y', $dateUS);
+    // strftime('%d-%m-%Y',strtotime($date));
 
-    $date = ("2018-02-23");
     
+
+    
+// doc :https://www.develop4fun.fr/afficher-la-date-du-jour-en-francais-avec-php/
