@@ -5,9 +5,9 @@
 
 <?php
 
-    // Définition de la fonction d'autoload pour charger automatiquement les classes
+    
     spl_autoload_register(function ($class_name) {
-        // Charge le fichier correspondant à la classe
+        
         require $class_name . '.php';
     });
 
