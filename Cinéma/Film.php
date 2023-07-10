@@ -5,7 +5,7 @@
     {
         private string $_titre;
         private int $_dateSortie;
-        private int $_duree;//à convertir en DateTime
+        private int $_duree;
         private Realisateur $_realisateur;
         private string $_resume;
         private Genre $_genre;
@@ -19,14 +19,14 @@
             $this->_duree = $duree;
             $this->_realisateur = $realisateur;
             $this->_resume = $resume;
-            $this->_realisateur->addFilm($this);//cf class realisateur
+            $this->_realisateur->addFilm($this);
             $this->_genre = $genre;
-            $this->_genre->addFilm($this);//cf class genre
+            $this->_genre->addFilm($this);
             $this->_castings = [];
         }
 
-        //**Setter et Getter */
-        //Titre
+        //**Setter et Getter ***********************************************************************************************************
+        
 
         public function getTitre()
         {
@@ -38,7 +38,7 @@
             $this->_titre = $titre;
         }
 
-        //date
+        
         public function getDateSortie(): int
         {
             return $this->_dateSortie;
@@ -49,7 +49,7 @@
             $this->_dateSortie = $dateSortie;
         }
 
-        //duree
+        
         public function getDuree()
         {
             return $this->_duree;
@@ -61,7 +61,7 @@
             $this->_duree = $duree;
         }
 
-        //resume
+        
         public function getResume()
         {
             return $this->_resume;
@@ -72,9 +72,9 @@
             $this->_resume = $resume;
         }
 
-        //Realisateur
-
-        //genre
+        
+        //******************************************** 
+        
         public function getRealisateur()
         {
             return $this->_realisateur;
@@ -85,7 +85,8 @@
             $this->_realisateur = $realisateur;
         }
 
-        //genre
+        //****************************************************
+
         public function getGenre()
         {
             return $this->_genre;
@@ -96,27 +97,32 @@
             $this->_genre = $genre;
         }
 
-        //role
+        
 
 
-        //**Méthode */
+        //**Méthode************************************************************
 
         //Convertir dateSortie en année
         public function dateSortie()
-        {
-            $getDate = $this->getDateSortie(); //je récupère ma date au format in
-            $dateTimeStamp = mktime(0, 0, 0, 1, 1, $getDate);//je la convertir en Timestamp Unix, la fonction a besoin des arguments suivants "mktime($heure, $minute, $seconde, $mois, $jour, $annee, $est_dst)"
-            $dateSortie = date('Y', $dateTimeStamp);//je crée ma date et la formate ma date en année
+        {   
+            //je récupère ma date au format in
+            $getDate = $this->getDateSortie(); 
+            //je la convertir en Timestamp Unix, la fonction a besoin des arguments suivants "mktime($heure, $minute, $seconde, $mois, $jour, $annee, $est_dst)"
+            $dateTimeStamp = mktime(0, 0, 0, 1, 1, $getDate);
+            //je crée ma date et la formate ma date en année
+            $dateSortie = date('Y', $dateTimeStamp);
             return "Année de sortie : " . $dateSortie;
         }
 
-        //Convertir la duree du format int en durée
+        //Convertir la duree du format int en durée****************************************************************************************
 
         public function getDureeTime()
-        {
-            $getDate = $this->getDuree();//je recupere ma durée en minutes
-            $convertSecond = $getDate * 60;//je convertis mes minutes en seconde (le calcul des dates et durées se fait à partir des timestamp unix (en seconde))
-            $date = date('H:i', $convertSecond); // Creation et formatage de la date
+        {   //je recupere ma durée en minutes
+            $getDate = $this->getDuree();
+            //je convertis mes minutes en seconde (le calcul des dates et durées se fait à partir des timestamp unix (en seconde))
+            $convertSecond = $getDate * 60;
+            // Creation et formatage de la date
+            $date = date('H:i', $convertSecond); 
             return "Durée : " . $date;
         }
 
@@ -135,22 +141,22 @@
                 $result .= "Pas de casting pour ce film !";
             } else {
                 foreach ($this->_castings as $casting) {
-                    $result .= $casting->getNomRole() . " est joué par " . $casting->getActeur() . "<br>";
+                    $result .= $casting->getNomRole() . " est joué par " . $casting->getActeur() . " <br>";
                 }
             }
             return $result;
         }
 
 
-        //Affichage
+        //Affichage******************************************************************************************
         public function __toString()
         {
             return "<b>" . $this->getTitre() . "</b>
                     <br> " . $this->DateSortie() .
-                "<br> " . $this->getDureeTime() .
-                " <br> Genre : " . $this->getGenre() .
-                " <br> Réalisateur : " . $this->getRealisateur() .
-                " <br> Synopsys : " . $this->getResume() . ".<br>";
+                    "<br> " . $this->getDureeTime() .
+                    " <br> Genre : " . $this->getGenre() .
+                    " <br> Réalisateur : " . $this->getRealisateur() .
+                    " <br> Synopsys : " . $this->getResume() . ".<br>";
         }
 
 

@@ -8,7 +8,7 @@
         private string $_sexe;
         private DateTime $_dateNaissance;
 
-        //**Construct */
+        //**Construct ***********************************************************************************
 
         public function __construct(string $nom, string $prenom, string $sexe, string $dateNaissance) {
             $this -> _nom = $nom;
@@ -17,19 +17,19 @@
             $this -> _dateNaissance = new DateTime($dateNaissance);
         }
 
-        //** Setter Getter */
+        //** Setter Getter***********************************************************************************
 
-        //Nom
+        
         public function getNom(){
             return $this ->_nom;
 
         }
-
+        
         public function setNom(string $nom){
             $this->_nom = $nom;
         }
 
-        //Prenom
+        //******************************** */
         public function getPrenom(){
             return $this ->_prenom;
         
@@ -39,7 +39,7 @@
             $this->_prenom = $prenom;
         }
 
-        //Sexe
+        //***************************************** */
 
         public function getSexe(){
             return $this -> _sexe;
@@ -49,7 +49,7 @@
             $this->_sexe = $sexe;
         }
 
-        //dateNaissance
+        //dateNaissance********************************
 
         public function getDateNaissance(){
             return $this ->_dateNaissance;
@@ -59,13 +59,16 @@
             $this->_dateNaissance -> $dateNaissance;
         }
 
-        //*Modele*/
+        //*Modele***************************************************
 
         //Date de naissances des Personne
         //Convertir date de naissance en string pour l'afficher
         public function dateNaissanceString(){
-            $date = $this->getDateNaissance();//recuperer la date
-            $dateString = $date->format('Y-m-d');//la convertir en string 
+            
+            $date = $this->getDateNaissance();
+            //je récupère la date 
+            $dateString = $date->format('Y-m-d');
+            //la convertir en string 
             return $dateString;
         }
 

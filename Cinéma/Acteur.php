@@ -50,7 +50,7 @@
         }
 
         
-        public function afficherFimographie(){
+        public function afficherFilmographie(){
             $result ="<h3> Filmographie de " . $this->getPrenom(). " " .$this->getNom() ."</h3>";
             $castings = $this->_castings;
             foreach ($castings as $casting){

@@ -42,7 +42,7 @@
 
         
         public function afficherFilmReal(){
-            $result ="<h3> Filmograhie de " . $this->getPrenom(). " " .$this->getNom() ."</h3>";
+            $result ="<h3> Filmograhie de " . $this->getPrenom(). " " .$this->getNom() ." : </h3>";
             $films = $this->_films;
             foreach ($films as $film){
                 $result .= $film ."<br>";
